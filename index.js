@@ -1,7 +1,5 @@
 const express = require("express")
 const bodyParser = require("body-parser")
-// var items=["Buy Food", "Cook Food", "Eat Food"]
-// var workItems=[]
 const mongoose = require("mongoose")
 mongoose.connect("mongodb://localhost:27017/To-Do-List")
 
@@ -69,14 +67,6 @@ app.post("/",function(req,res){
             res.redirect("/"+listname)
         })
     }
-    
-    // if(req.body.button==="Work"){
-    //     workItems.push(item)
-    //     res.redirect("/work")
-    // }else{
-    //     items.push(item)
-    //     res.redirect("/")
-    // }
 })
 
 app.post("/delete",function(req,res){
@@ -120,16 +110,6 @@ app.get("/:list",function(req,res){
         }
     })
 })
-
-// app.get("/work", function(req,res){
-//     res.render("index", {kindOfDay: "Work", newListItems: workItems})
-// })
-
-// app.post("/work", function(req,res){
-//     let item = req.body.newItems
-//     workItems.push(item)
-//     res.redirect("/work")
-// })
 
 
 app.listen(3000, function(){
